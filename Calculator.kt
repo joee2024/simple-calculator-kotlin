@@ -1,24 +1,24 @@
 package com.example.mycalculator
 
-fun read_number(prompt: String) : Double {
+fun read_number(a: String) : Double {
     while (true) {
-        print(prompt)
-        val input = readLine()
+        print(a)
+        val num = readLine()
         try {
-            return input!!.toDouble()
+            return num!!.toDouble()
         } catch (e: NumberFormatException) {
             println("Invalid input. Please enter a number.")
         }
     }
 }
 
-fun read_operator (prompt: String) : String {
+fun read_operator (b: String) : String {
     val symbol = setOf ("+", "-", "*", "/")
     while (true) {
-        print(prompt)
-        val input = readLine()
-        if (input in symbol) {
-            return input!!
+        print(b)
+        val operator = readLine()
+        if (operator in symbol) {
+            return operator!!
         } else {
             println("Invalid input.Please enter one of this : +, -, *, /")
         }
@@ -45,10 +45,10 @@ fun calculate(first_num: Double, second_num: Double, symbol: String): Double? {
     }
 }
 
-fun read_decision (prompt: String) : String {
+fun read_decision (c: String) : String {
     val option = setOf ("Y", "y", "N", "n")
     while (true) {
-        print(prompt)
+        print(c)
         val input = readLine()
         if (input in option) {
             return input!!
